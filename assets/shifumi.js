@@ -66,7 +66,7 @@ const gameButtons = document.querySelectorAll(".fighter");
 
 function getComputerChoice() {
   let computerPokemon = document.querySelector("#computerPokemon");
-  let computerChoice = document.querySelector('.computerChose')
+  let computerChoice = document.querySelector('.computerChose'); 
 
 
   const randomIndex = Math.floor(Math.random() * gameOptions.length);
@@ -105,6 +105,7 @@ let computerScore = 0;
 for (let i = 0; i < gameButtons.length; i++) {
   let button = gameButtons[i];
   let message = document.querySelector('.message');
+  let victory = document.querySelector('#victory');
 
   button.addEventListener("click", function () {
     getComputerChoice();
@@ -114,14 +115,13 @@ for (let i = 0; i < gameButtons.length; i++) {
       highlight(computerScoreEl);
       highlight(userScoreEl);
     } else if (playerSelection.losesTo === computerSelection) {
-      message.innerHTML = '<p class="bg-light h3 rounded">YOU LOSE !</p>'
+      message.innerHTML = '<p class="bg-light h3 rounded text-danger">YOU LOSE !</p>'
       highlight(computerScoreEl);
       computerScore += 1;
       computerScoreEl.innerText = computerScore;
     } else {
-      message.innerHTML = '<p class="bg-light h3 rounded">YOU WIN !</p>'
+      message.innerHTML = '<p class="bg-light h3 text-success rounded">YOU WIN !</p>'
       highlight(userScoreEl);
-
       userScore += 1;
       userScoreEl.innerText = userScore;
     }

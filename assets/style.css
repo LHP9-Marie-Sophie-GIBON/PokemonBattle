@@ -1,14 +1,24 @@
 body{
     margin: 0;
     padding: 0;
+
+    background-image: url(img/icons8-pokéball-100.png);
+    background-attachment:fixed;
+    
 }
 
 .container {
     margin: 0;
     padding: 0;
 }
+
+nav {
+    background-color: rgba(240, 248, 255, 0.681);
+}
+
+
 .team1 {
-background-image: url(img/team.jpg);
+background-image: url(img/computer.png);
 background-position:center;
 background-size: cover;
 
@@ -19,14 +29,15 @@ background-size: cover;
 }
 
 .team2 {
-    background-color: rgb(206, 212, 217);
-}
+    background-image: url(img/player.jpg);
+    background-position:center;
+    background-size: cover;}
 
 .battleArea {
     background-image: url(img/battle.jpg) ;
     background-repeat: no-repeat;
     background-position:center;
-    background-attachment:fixed;
+   
     background-size: cover;
 }
 
@@ -51,4 +62,9 @@ background-size: cover;
 
 .rival {
     padding-top: 7rem;
+}
+
+.restart:hover {
+    transform: scale(1.1); 
+    transition: 1s; 
 }
