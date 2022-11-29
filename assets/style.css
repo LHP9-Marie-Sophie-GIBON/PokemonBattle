@@ -1,0 +1,44 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin: 0;
+    padding: 0;
+}
+.team1 {
+background-image: url(img/team.jpg);
+background-size: cover;
+
+}
+
+.battle {
+    padding-top: 7rem;
+}
+
+.team2 {
+    background-color: rgb(206, 212, 217);
+}
+
+.battleArea {
+    background-image: url(img/battle.jpg) ;
+    background-size: cover;
+    background-position: center;
+    
+}
+
+.fighter:hover {
+    transform: scale(1.1); 
+    transition: 1s; 
+}
+
+.Pokeball:hover {
+    transform: translateY(-10px);
+}
+
+.pokemon {
+    width: 220px;
+    filter: drop-shadow(1px 10px 5px black);
+
+}

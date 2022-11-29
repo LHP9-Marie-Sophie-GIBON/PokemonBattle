@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shifumi</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+</head>
+
+<body>
+    <header class="text-center">
+        <img src="assets/img/Battle_Frontier_logo2.webp" alt="">
+    </header>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-2 rounded m-1 team1">
+                <img src="assets/img/letsgo.webp" alt="">
+                <div class="row mt-5 text-center">
+                    <div id="carousel" class="carousel slide">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img id="poke1" type="button"
+                                    src="https://www.pokepedia.fr/images/5/5c/Miniature_155_DEPS.png"
+                                    class="fighter img-fluid starterFeu" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img id="poke2" type="button"
+                                    src="https://www.pokepedia.fr/images/1/15/Miniature_152_DEPS.png"
+                                    class="fighter img-fluid starterPlante" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img id="poke3" type="button"
+                                    src="https://www.pokepedia.fr/images/1/15/Miniature_158_DEPS.png"
+                                    class="fighter img-fluid starterEau" alt="...">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carousel"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carousel"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="row mt-5 text-center">
+                    <div class="col">
+                        <img type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active Pokeball"
+                            aria-label="Slide 1" src="assets/img/Pokeball.png" alt="">
+                    </div>
+                    <div class="col">
+                        <img type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2"
+                            class="Pokeball" src="assets/img/PokeballGreen.png" alt="">
+                    </div>
+                    <div class="col">
+                        <img type="button" data-bs-target="#carousel" data-bs-slide-to="2" aria-label="Slide 3"
+                            class="Pokeball" src="assets/img/PokeballBlue.png" alt="">
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col border rounded m-1 battleArea">
+                <div class="row mt-2 mb-5 text-center">
+                    <div class="h2 text-white"><span class="message"></span></div>
+                </div>
+                <div class="row mt-2 mb-5 text-center">
+                    <div class="h2 text-white"><span class="youChose"></span>  -  <span class="computerChose"></span></div>
+                </div>
+                <div class="row text-center pb-5 battle">
+                    <div class="col" id="playerOne"></div>
+                    <div class="col"><img src="assets/img/vs.png" alt=""></div>
+                    <div class="col" id="computerPokemon"></div>
+                </div>
+
+
+            </div>
+
+            <div class="col-sm-2 border rounded m-1 team2">
+                <div class="text-center mt-5">
+                    <img src="assets/img/Pokeball.png" alt="">
+                </div>
+                <div class="text-center mt-5">
+                    <img src="assets/img/PokeballGreen.png" alt="">
+                </div>
+                <div class="text-center mt-5">
+                    <img src="assets/img/PokeballBlue.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="assets/shifumi.js"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
