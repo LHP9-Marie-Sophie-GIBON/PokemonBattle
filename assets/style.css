@@ -9,6 +9,7 @@ body{
 }
 .team1 {
 background-image: url(img/team.jpg);
+background-position:center;
 background-size: cover;
 
 }
@@ -23,9 +24,10 @@ background-size: cover;
 
 .battleArea {
     background-image: url(img/battle.jpg) ;
+    background-repeat: no-repeat;
+    background-position:center;
+    background-attachment:fixed;
     background-size: cover;
-    background-position: center;
-    
 }
 
 .fighter:hover {
@@ -41,4 +43,12 @@ background-size: cover;
     width: 220px;
     filter: drop-shadow(1px 10px 5px black);
 
+}
+.pkm {
+    filter: drop-shadow(1px 10px 5px black);
+
+}
+
+.rival {
+    padding-top: 7rem;
 }

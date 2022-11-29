@@ -12,23 +12,25 @@
 </head>
 
 <body>
-    <header class="text-center">
-        <div class="col">
-            <img src="assets/img/Battle_Frontier_logo2.webp" alt="">
-        </div>
-        <div class="col">
-        
-                <h4 class="noDisplay chosenOptionEmoji"></h4>
-                <h3>Computer</h3>
-                <h2 id="computerScore">0</h2>
-              </div>
-              <span>X</span>
-              <div>
-                <h2 id="userScore">0</h2>
-                <h3>You</h3>
-                <h4 class="noDisplay chosenOptionEmoji"></h4>
-        </div>
-
+    <header>
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand ms-5"><img src="assets/img/Battle_Frontier_logo2.webp" alt=""></a>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <form class="navbar-nav ms-5">
+                        <li class="nav-item btn ms-5">
+                            <div>
+                                <img src="assets/img/Red29Sprite.webp" alt=""><span id="userScore" class="h3">0</span>
+                            </div>
+                        </li>
+                        <li class="nav-item btn ms-5">
+                            <div><img src="assets/img/Blue2.webp" alt=""> <span id="computerScore" class="h3">0</span>
+                            </div>
+                        </li>
+                    </form>
+                </div>
+            </div>
+        </nav>
     </header>
 
     <div class="container">
@@ -86,7 +88,7 @@
 
             <div class="col border rounded m-1 battleArea">
                 <div class="row text-center">
-                    <div class="col message mt-3"> 
+                    <div class="col message mt-3">
                         <img src="https://img.icons8.com/ios-filled/100/null/battle-pokemon.png" />
                     </div>
                 </div>
@@ -105,16 +107,19 @@
 
             </div>
 
-            <div class="col-sm-2 border rounded m-1 team2">
-                <div class="text-center mt-5">
-                    <img src="assets/img/Pokeball.png" alt="">
+            <div class="col-sm-2 rounded m-1 team2">
+                <div class="rival">
+                    <div class="text-center">
+                        <img src="assets/img/Pokeball.png" alt="">
+                    </div>
+                    <div class="text-center mt-5">
+                        <img src="assets/img/PokeballGreen.png" alt="">
+                    </div>
+                    <div class="text-center mt-5">
+                        <img src="assets/img/PokeballBlue.png" alt="">
+                    </div>
                 </div>
-                <div class="text-center mt-5">
-                    <img src="assets/img/PokeballGreen.png" alt="">
-                </div>
-                <div class="text-center mt-5">
-                    <img src="assets/img/PokeballBlue.png" alt="">
-                </div>
+
             </div>
         </div>
     </div>

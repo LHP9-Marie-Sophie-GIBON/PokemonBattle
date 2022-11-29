@@ -73,15 +73,15 @@ function getComputerChoice() {
   computerSelection = gameOptions[randomIndex].type;
 
   if (computerSelection == gameOptions[0].type) {
-    computerPokemon.innerHTML = '<img class="img-fluid pokemon" src="assets/img/salamèche.png" alt="">'
+    computerPokemon.innerHTML = '<img class="img-fluid pkm" src="assets/img/salamèche.png" alt="">'
     computerChoice.innerHTML = '<img src="assets/img/fire.png" alt="">'
   
   } else if (computerSelection == gameOptions[1].type) {
-    computerPokemon.innerHTML = '<img class="img-fluid pokemon" src="assets/img/bulbizarre.png" alt="">'
+    computerPokemon.innerHTML = '<img class="img-fluid pkm" src="assets/img/bulbizarre.png" alt="">'
     computerChoice.innerHTML = '<img src="assets/img/plant.png" alt="">'
 
   } else {
-    computerPokemon.innerHTML = '<img class="img-fluid pokemon" src="assets/img/Carapuce.png" alt="">'
+    computerPokemon.innerHTML = '<img class="img-fluid pkm" src="assets/img/Carapuce.png" alt="">'
     computerChoice.innerHTML = '<img src="assets/img/water.png" alt="">'
 
   }
