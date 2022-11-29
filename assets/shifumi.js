@@ -71,7 +71,6 @@ function getComputerChoice() {
 
   const randomIndex = Math.floor(Math.random() * gameOptions.length);
   computerSelection = gameOptions[randomIndex].type;
-  console.log("Computer chose: " + computerSelection);
 
   if (computerSelection == gameOptions[0].type) {
     computerPokemon.innerHTML = '<img class="img-fluid pokemon" src="assets/img/salamèche.png" alt="">'
@@ -88,6 +87,20 @@ function getComputerChoice() {
   }
 }
 
+function highlight(scoreEl) {
+  var orig = scoreEl.style.color;
+  scoreEl.style.color = "#f0ac0f";
+  setTimeout(function () {
+    scoreEl.style.color = orig;
+  }, 400);
+}
+
+var computerScoreEl = document.getElementById("computerScore");
+var userScoreEl = document.getElementById("userScore");
+
+let userScore = 0;
+let computerScore = 0;
+
 
 for (let i = 0; i < gameButtons.length; i++) {
   let button = gameButtons[i];
@@ -97,21 +110,20 @@ for (let i = 0; i < gameButtons.length; i++) {
     getComputerChoice();
 
     if (playerSelection.type === computerSelection) {
-      console.log("%cdraw huhu", "color: #4399dd; font-size: 25px");
-      message.innerHTML = "It's not very effective !"
-
+      message.innerHTML = '<p class="bg-light h3 rounded">It s not very effective !</p>'
+      highlight(computerScoreEl);
+      highlight(userScoreEl);
     } else if (playerSelection.losesTo === computerSelection) {
-      console.log(
-        "%cyou lose 😔",
-        "color: #e44535; font-size: 25px; font-weight: bold"
-      );
-      message.innerHTML = 'You lose'
-
+      message.innerHTML = '<p class="bg-light h3 rounded">YOU LOSE !</p>'
+      highlight(computerScoreEl);
+      computerScore += 1;
+      computerScoreEl.innerText = computerScore;
     } else {
-      console.log(
-        "%cyou win! whoop whoop",
-        "color: #6eb179; font-size: 25px; font-weight: bold"
-      );
-      message.innerHTML = 'You win'
+      message.innerHTML = '<p class="bg-light h3 rounded">YOU WIN !</p>'
+      highlight(userScoreEl);
+
+      userScore += 1;
+      userScoreEl.innerText = userScore;
     }
 })}
+

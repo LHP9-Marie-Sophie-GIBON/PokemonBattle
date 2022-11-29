@@ -13,7 +13,22 @@
 
 <body>
     <header class="text-center">
-        <img src="assets/img/Battle_Frontier_logo2.webp" alt="">
+        <div class="col">
+            <img src="assets/img/Battle_Frontier_logo2.webp" alt="">
+        </div>
+        <div class="col">
+        
+                <h4 class="noDisplay chosenOptionEmoji"></h4>
+                <h3>Computer</h3>
+                <h2 id="computerScore">0</h2>
+              </div>
+              <span>X</span>
+              <div>
+                <h2 id="userScore">0</h2>
+                <h3>You</h3>
+                <h4 class="noDisplay chosenOptionEmoji"></h4>
+        </div>
+
     </header>
 
     <div class="container">
@@ -70,12 +85,17 @@
             </div>
 
             <div class="col border rounded m-1 battleArea">
-                <div class="row mt-2 mb-5 text-center">
-                    <div class="h2 text-white"><span class="message"></span></div>
+                <div class="row text-center">
+                    <div class="col message mt-3"> 
+                        <img src="https://img.icons8.com/ios-filled/100/null/battle-pokemon.png" />
+                    </div>
                 </div>
-                <div class="row mt-2 mb-5 text-center">
-                    <div class="h2 text-white"><span class="youChose"></span>  -  <span class="computerChose"></span></div>
+                <div class="row mt-2 text-center">
+                    <div class="h2 text-white"><span class="youChose"></span> <img
+                            src="https://img.icons8.com/sf-black-filled/64/null/pokeball.png" /> <span
+                            class="computerChose"></span></div>
                 </div>
+
                 <div class="row text-center pb-5 battle">
                     <div class="col" id="playerOne"></div>
                     <div class="col"><img src="assets/img/vs.png" alt=""></div>
