@@ -80,24 +80,6 @@ nav {
     100% { transform: translate(0, 0) rotate(0); }
   }
 
-@keyframes fall {
-    0% {
-        top: -200px
-    }
-
-    60% {
-        top: 0
-    }
-
-    80% {
-        top: -20px
-    }
-
-    100% {
-        top: 0
-    }
-}
-
 .pokemon {
     width: 220px;
     filter: drop-shadow(1px 10px 5px black);
