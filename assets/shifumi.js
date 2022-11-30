@@ -34,7 +34,7 @@ for (let i = 0; i < starterFeu.length; i++) {
 
 // Choix starter plante
 let pokePlante = document.querySelector('#poke2'); 
-pokePlante.addEventListener('click', () => playerOne.innerHTML = '<img class="img-fluid pokemon" src="assets/img/germignon.png" alt="">')
+pokePlante.addEventListener('click', () => playerOne.innerHTML = '<img class="img-fluid pokemon" src="assets/img/Germignon.png" alt="">')
 
 const starterPlante = document.querySelectorAll(".starterPlante");
 for (let i = 0; i < starterPlante.length; i++) {
@@ -48,7 +48,7 @@ for (let i = 0; i < starterPlante.length; i++) {
 
 // Choix starter eau
 let pokeEau = document.querySelector('#poke3'); 
-pokeEau.addEventListener('click', () => playerOne.innerHTML = '<img class="img-fluid pokemon" src="assets/img/kaiminus.png" alt="" >')
+pokeEau.addEventListener('click', () => playerOne.innerHTML = '<img class="img-fluid pokemon" src="assets/img/Kaiminus.png" alt="" >')
 
 const starterEau = document.querySelectorAll(".starterEau");
 for (let i = 0; i < starterEau.length; i++) {
