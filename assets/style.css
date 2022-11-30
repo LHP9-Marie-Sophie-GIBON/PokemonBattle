@@ -83,8 +83,9 @@ nav {
 .pokemon {
     width: 220px;
     filter: drop-shadow(1px 10px 5px black);
-    animation: bounce 0.45s ease infinite alternate, fadeIn 1s, zoom-in-zoom-out 0.5s;
+    animation: bounce 0.8s ease infinite alternate, fadeIn 1s, zoom-in-zoom-out 0.5s ;
 }
+
 
 @keyframes zoom-in-zoom-out {
     0% { transform: scale(0.5, 0.5);}
@@ -99,12 +100,22 @@ nav {
 
 @keyframes bounce {
     from {transform: translateY(0);}
-    to {transform: translateY(-20px);}
+    to {transform: translateY(-10px);}
+    
 }
+
+.winwin {
+    animation: zoom 1s ease;
+}
+
+@keyframes zoom {
+    0% { transform: scale(1, 1);}
+    100% { transform: scale(2.5, 2.5);}
+  }
 
 .pkm {
     filter: drop-shadow(1px 10px 5px black);
-    animation: bounce 0.50s ease infinite alternate, fadeIn 1s, zoom-in-zoom-out 0.5s;
+    animation: bounce 0.90s ease infinite alternate, fadeIn 1s, zoom-in-zoom-out 0.5s;
 }
 
 /* .rival {

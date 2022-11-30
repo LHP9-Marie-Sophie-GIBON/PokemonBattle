@@ -15,12 +15,12 @@ const gameOptions = [
 ];
 
 // Choix pokemon
-let playerOne = document.querySelector('#playerOne'); 
+let playerOne = document.querySelector('#playerOne');
 let playerSelection;
 let choice = document.querySelector('.youChose')
 
 // Choix starter feu
-let pokeFeu = document.querySelector('#poke1'); 
+let pokeFeu = document.querySelector('#poke1');
 pokeFeu.addEventListener('click', () => playerOne.innerHTML = '<img class="img-fluid pokemon"src="assets/img/Héricendre.png" alt="">')
 
 const starterFeu = document.querySelectorAll(".starterFeu");
@@ -33,7 +33,7 @@ for (let i = 0; i < starterFeu.length; i++) {
 }
 
 // Choix starter plante
-let pokePlante = document.querySelector('#poke2'); 
+let pokePlante = document.querySelector('#poke2');
 pokePlante.addEventListener('click', () => playerOne.innerHTML = '<img class="img-fluid pokemon" src="assets/img/Germignon.png" alt="">')
 
 const starterPlante = document.querySelectorAll(".starterPlante");
@@ -47,7 +47,7 @@ for (let i = 0; i < starterPlante.length; i++) {
 }
 
 // Choix starter eau
-let pokeEau = document.querySelector('#poke3'); 
+let pokeEau = document.querySelector('#poke3');
 pokeEau.addEventListener('click', () => playerOne.innerHTML = '<img class="img-fluid pokemon" src="assets/img/Kaiminus.png" alt="" >')
 
 const starterEau = document.querySelectorAll(".starterEau");
@@ -59,14 +59,13 @@ for (let i = 0; i < starterEau.length; i++) {
   });
 }
 
-
 //Choix computer
 let computerSelection;
 const gameButtons = document.querySelectorAll(".fighter");
 
 function getComputerChoice() {
   let computerPokemon = document.querySelector("#computerPokemon");
-  let computerChoice = document.querySelector('.computerChose'); 
+  let computerChoice = document.querySelector('.computerChose');
   let VSpkm = document.querySelector('#VSpkm')
 
 
@@ -77,7 +76,7 @@ function getComputerChoice() {
     computerPokemon.innerHTML = '<img class="img-fluid pkm" src="assets/img/salamèche.png" alt="">'
     computerChoice.innerHTML = '<img src="assets/img/fire.png" alt="">'
     VSpkm.innerHTML = '<img src="https://www.pokepedia.fr/images/9/96/Miniature_004_DEPS.png" class="img-fluid fighter" id="EaseIn" alt="...">'
-  
+
   } else if (computerSelection == gameOptions[1].type) {
     computerPokemon.innerHTML = '<img class="img-fluid pkm" src="assets/img/bulbizarre.png" alt="">'
     computerChoice.innerHTML = '<img src="assets/img/plant.png" alt="">'
@@ -98,15 +97,18 @@ function highlight(scoreEl) {
   setTimeout(function () {
     scoreEl.style.color = orig;
   }, 400);
-}
 
+
+}
 var computerScoreEl = document.getElementById("computerScore");
 var userScoreEl = document.getElementById("userScore");
 
 let userScore = 0;
 let computerScore = 0;
 
-// let's battle
+
+
+// Music
 var defeatSound = new Audio(
   "assets/music/battle.mp3"
 );
@@ -117,6 +119,7 @@ var mehSound = new Audio(
   "assets/music/meh.mp3"
 );
 
+// let's battle
 for (let i = 0; i < gameButtons.length; i++) {
   let button = gameButtons[i];
   let message = document.querySelector('.message');
@@ -125,32 +128,45 @@ for (let i = 0; i < gameButtons.length; i++) {
     getComputerChoice();
 
     if (playerSelection.type === computerSelection) {
-      message.innerHTML = '<p class="bg-light h3 rounded">It s not very effective !</p>'
+      message.innerHTML = '<p class="bg-light h3 rounded">It is not very effective !</p>'
       mehSound.play();
       highlight(computerScoreEl);
       highlight(userScoreEl);
     } else if (playerSelection.losesTo === computerSelection) {
-      message.innerHTML = '<p class="bg-light h3 rounded text-danger">Your pokemon fainted, YOU LOSE !</p>'
+      message.innerHTML = '<p class="bg-light h3 rounded text-danger">Your pokemon is in a bad position !</p>'
       defeatSound.play();
       highlight(computerScoreEl);
       computerScore += 1;
       computerScoreEl.innerText = computerScore;
     } else {
-      message.innerHTML = '<p class="bg-light h3 text-success rounded">It s super effective, YOU WIN !</p>'
+      message.innerHTML = '<p class="bg-light h3 text-success rounded">It is super effective !</p>'
       victorySound.play();
       highlight(userScoreEl);
       userScore += 1;
       userScoreEl.innerText = userScore;
     }
-})}
+
+    let battle = document.querySelector('#battle');
+    if ((userScoreEl.innerText) == 3) {
+      console.log("woop woop")
+      battle.innerHTML = '<div class="text-center"><img src="assets/img/winner.webp" alt="" class="img-fluid winwin"></div>'
+    } else if ((computerScoreEl.innerText) == 3) {
+      console.log("winwin")
+      battle.innerHTML = '<div class="text-center"><p class="h1 text-white bg-dark">Your Pokemon has fainted !</p></div>'
+
+    }
+  })
+
+}
+
 
 
 // modal bootstrap
-const myModal = document.getElementById('myModal')
-const myInput = document.getElementById('myInput')
+// const myModal = document.getElementById('myModal')
+// const myInput = document.getElementById('myInput')
 
-myModal.addEventListener('shown.bs.modal', () => {
-  myInput.focus()
-})
+// myModal.addEventListener('shown.bs.modal', () => {
+//   myInput.focus()
+// })
 
 
