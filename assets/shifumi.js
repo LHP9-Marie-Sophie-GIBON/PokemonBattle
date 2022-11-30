@@ -28,7 +28,7 @@ for (let i = 0; i < starterFeu.length; i++) {
   let button = starterFeu[i];
   button.addEventListener("click", function () {
     playerSelection = gameOptions[0];
-    choice.innerHTML = `<img src="assets/img/fire.png" alt="">`;
+    choice.innerHTML = `<img src="assets/img/fire.png" alt="" >`;
   });
 }
 
@@ -48,7 +48,7 @@ for (let i = 0; i < starterPlante.length; i++) {
 
 // Choix starter eau
 let pokeEau = document.querySelector('#poke3'); 
-pokeEau.addEventListener('click', () => playerOne.innerHTML = '<img class="img-fluid pokemon" src="assets/img/kaiminus.png" alt="">')
+pokeEau.addEventListener('click', () => playerOne.innerHTML = '<img class="img-fluid pokemon" src="assets/img/kaiminus.png" alt="" >')
 
 const starterEau = document.querySelectorAll(".starterEau");
 for (let i = 0; i < starterEau.length; i++) {
@@ -87,6 +87,7 @@ function getComputerChoice() {
   }
 }
 
+// SCORE
 function highlight(scoreEl) {
   var orig = scoreEl.style.color;
   scoreEl.style.color = "#f0ac0f";
@@ -101,29 +102,51 @@ var userScoreEl = document.getElementById("userScore");
 let userScore = 0;
 let computerScore = 0;
 
+// let's battle
+var defeatSound = new Audio(
+  "assets/music/battle.mp3"
+);
+var victorySound = new Audio(
+  "assets/music/victory.mp3"
+);
+var mehSound = new Audio(
+  "assets/music/meh.mp3"
+);
 
 for (let i = 0; i < gameButtons.length; i++) {
   let button = gameButtons[i];
   let message = document.querySelector('.message');
-  let victory = document.querySelector('#victory');
 
   button.addEventListener("click", function () {
     getComputerChoice();
 
     if (playerSelection.type === computerSelection) {
       message.innerHTML = '<p class="bg-light h3 rounded">It s not very effective !</p>'
+      mehSound.play();
       highlight(computerScoreEl);
       highlight(userScoreEl);
     } else if (playerSelection.losesTo === computerSelection) {
-      message.innerHTML = '<p class="bg-light h3 rounded text-danger">YOU LOSE !</p>'
+      message.innerHTML = '<p class="bg-light h3 rounded text-danger">Your pokemon fainted, YOU LOSE !</p>'
+      defeatSound.play();
       highlight(computerScoreEl);
       computerScore += 1;
       computerScoreEl.innerText = computerScore;
     } else {
-      message.innerHTML = '<p class="bg-light h3 text-success rounded">YOU WIN !</p>'
+      message.innerHTML = '<p class="bg-light h3 text-success rounded">It s super effective, YOU WIN !</p>'
+      victorySound.play();
       highlight(userScoreEl);
       userScore += 1;
       userScoreEl.innerText = userScore;
     }
 })}
+
+
+// modal bootstrap
+const myModal = document.getElementById('myModal')
+const myInput = document.getElementById('myInput')
+
+myModal.addEventListener('shown.bs.modal', () => {
+  myInput.focus()
+})
+
 

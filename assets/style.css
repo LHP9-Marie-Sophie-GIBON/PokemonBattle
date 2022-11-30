@@ -1,10 +1,10 @@
-body{
+body {
     margin: 0;
     padding: 0;
 
     background-image: url(img/icons8-pokéball-100.png);
-    background-attachment:fixed;
-    
+    background-attachment: fixed;
+
 }
 
 .container {
@@ -18,9 +18,9 @@ nav {
 
 
 .team1 {
-background-image: url(img/computer.png);
-background-position:center;
-background-size: cover;
+    background-image: url(img/computer.png);
+    background-position: center;
+    background-size: cover;
 
 }
 
@@ -30,41 +30,126 @@ background-size: cover;
 
 .team2 {
     background-image: url(img/player.jpg);
-    background-position:center;
-    background-size: cover;}
-
-.battleArea {
-    background-image: url(img/battle.jpg) ;
-    background-repeat: no-repeat;
-    background-position:center;
-   
+    background-position: center;
     background-size: cover;
 }
 
-.fighter:hover {
-    transform: scale(1.1); 
-    transition: 1s; 
+.battleArea {
+    background-image: url(img/battle.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+
+    background-size: cover;
+}
+
+.fighter {
+    animation: bounce2 0.2s ease infinite alternate;
+
+}
+
+@keyframes bounce2 {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-5px);
+    }
 }
 
 .Pokeball:hover {
     transform: translateY(-10px);
 }
 
+.PokeballActive:hover {
+    transform: translateY(-10px);
+}
+
+.PokeballActive {
+    filter: drop-shadow(0.2px 3px 5px black);
+    animation: 
+        shake 1.25s infinite cubic-bezier(.36, .07, .19, .97)
+}
+
+@keyframes shake {
+    0 { transform: translate(0, 0) rotate(0); }
+    20% { transform: translate(-5px, 0) rotate(-10deg); }
+    30% { transform: translate(5px, 0) rotate(10deg); }
+    50% { transform: translate(-5px, 0) rotate(-10deg); }
+    60% { transform: translate(5px, 0) rotate(10deg); }
+    100% { transform: translate(0, 0) rotate(0); }
+  }
+
+@keyframes fall {
+    0% {
+        top: -200px
+    }
+
+    60% {
+        top: 0
+    }
+
+    80% {
+        top: -20px
+    }
+
+    100% {
+        top: 0
+    }
+}
+
 .pokemon {
     width: 220px;
     filter: drop-shadow(1px 10px 5px black);
 
-}
-.pkm {
-    filter: drop-shadow(1px 10px 5px black);
+    animation: bounce 0.45s ease infinite alternate;
 
 }
+
+@keyframes bounce {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-20px);
+    }
+}
+
+.pkm {
+    filter: drop-shadow(1px 10px 5px black);
+    animation-name: bounce 0.7s ease infinite;
+    animation: bounce 0.50s ease infinite alternate;
+
+
+}
+
+
+
 
 .rival {
     padding-top: 7rem;
 }
 
 .restart:hover {
-    transform: scale(1.1); 
-    transition: 1s; 
+    transform: scale(1.1);
+    transition: 1s;
+}
+
+.message p {
+    animation-duration: 2s;
+    animation-name: slidein;
+
+}
+
+@keyframes slidein {
+    from {
+        margin-left: 100%;
+        width: 300%;
+    }
+
+    to {
+        margin-left: 0%;
+        width: 100%;
+    }
 }
