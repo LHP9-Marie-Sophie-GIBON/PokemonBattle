@@ -4,7 +4,7 @@ body {
 
     background-image: url(img/icons8-pokéball-100.png);
     background-attachment: fixed;
-
+    overflow: hidden;
 }
 
 .container {
@@ -57,9 +57,9 @@ nav {
     }
 }
 
-.Pokeball:hover {
+/* .Pokeball:hover {
     transform: translateY(-10px);
-}
+} */
 
 .PokeballActive:hover {
     transform: translateY(-10px);
@@ -67,51 +67,49 @@ nav {
 
 .PokeballActive {
     filter: drop-shadow(0.2px 3px 5px black);
-    animation: 
+    animation:
         shake 1.25s infinite cubic-bezier(.36, .07, .19, .97)
 }
 
 @keyframes shake {
-    0% { transform: translate(0, 0) rotate(0); }
-    20% { transform: translate(-5px, 0) rotate(-10deg); }
-    30% { transform: translate(5px, 0) rotate(10deg); }
-    50% { transform: translate(-5px, 0) rotate(-10deg); }
-    60% { transform: translate(5px, 0) rotate(10deg); }
-    100% { transform: translate(0, 0) rotate(0); }
-  }
+    0% {transform: translate(0, 0) rotate(0);}
+    20% {transform: translate(-5px, 0) rotate(-10deg);}
+    30% {transform: translate(5px, 0) rotate(10deg);}
+    50% {transform: translate(-5px, 0) rotate(-10deg);}
+    60% {transform: translate(5px, 0) rotate(10deg);}
+    100% {transform: translate(0, 0) rotate(0);}
+}
 
 .pokemon {
     width: 220px;
     filter: drop-shadow(1px 10px 5px black);
-
-    animation: bounce 0.45s ease infinite alternate;
-
+    animation: bounce 0.45s ease infinite alternate, fadeIn 1s, zoom-in-zoom-out 0.5s;
 }
 
-@keyframes bounce {
-    from {
-        transform: translateY(0);
-    }
+@keyframes zoom-in-zoom-out {
+    0% { transform: scale(0.5, 0.5);}
+    50% { transform: scale(0.5, 0.5);}
+    100% { transform: scale(1, 1);}
+  }
 
-    to {
-        transform: translateY(-20px);
-    }
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+@keyframes bounce {
+    from {transform: translateY(0);}
+    to {transform: translateY(-20px);}
 }
 
 .pkm {
     filter: drop-shadow(1px 10px 5px black);
-    animation-name: bounce 0.7s ease infinite;
-    animation: bounce 0.50s ease infinite alternate;
-
-
+    animation: bounce 0.50s ease infinite alternate, fadeIn 1s, zoom-in-zoom-out 0.5s;
 }
 
-
-
-
-.rival {
+/* .rival {
     padding-top: 7rem;
-}
+} */
 
 .restart:hover {
     transform: scale(1.1);
@@ -129,7 +127,6 @@ nav {
         margin-left: 100%;
         width: 300%;
     }
-
     to {
         margin-left: 0%;
         width: 100%;

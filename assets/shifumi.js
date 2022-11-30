@@ -67,6 +67,7 @@ const gameButtons = document.querySelectorAll(".fighter");
 function getComputerChoice() {
   let computerPokemon = document.querySelector("#computerPokemon");
   let computerChoice = document.querySelector('.computerChose'); 
+  let VSpkm = document.querySelector('#VSpkm')
 
 
   const randomIndex = Math.floor(Math.random() * gameOptions.length);
@@ -75,14 +76,17 @@ function getComputerChoice() {
   if (computerSelection == gameOptions[0].type) {
     computerPokemon.innerHTML = '<img class="img-fluid pkm" src="assets/img/salamèche.png" alt="">'
     computerChoice.innerHTML = '<img src="assets/img/fire.png" alt="">'
+    VSpkm.innerHTML = '<img src="https://www.pokepedia.fr/images/9/96/Miniature_004_DEPS.png" class="img-fluid fighter" id="EaseIn" alt="...">'
   
   } else if (computerSelection == gameOptions[1].type) {
     computerPokemon.innerHTML = '<img class="img-fluid pkm" src="assets/img/bulbizarre.png" alt="">'
     computerChoice.innerHTML = '<img src="assets/img/plant.png" alt="">'
+    VSpkm.innerHTML = '<img src="https://www.pokepedia.fr/images/3/33/Miniature_001_DEPS.png" class="img-fluid fighter" id="EaseIn" alt="...">'
 
   } else {
     computerPokemon.innerHTML = '<img class="img-fluid pkm" src="assets/img/Carapuce.png" alt="">'
     computerChoice.innerHTML = '<img src="assets/img/water.png" alt="">'
+    VSpkm.innerHTML = '<img src="https://www.pokepedia.fr/images/a/ab/Miniature_007_DEPS.png" class="img-fluid fighter" id="EaseIn" alt="...">'
 
   }
 }
