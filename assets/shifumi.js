@@ -21,7 +21,7 @@ let choice = document.querySelector('.youChose')
 
 // Choix starter feu
 let pokeFeu = document.querySelector('#poke1');
-pokeFeu.addEventListener('click', () => playerOne.innerHTML = '<img class="img-fluid pokemon"src="assets/img/Héricendre.png" alt="">')
+pokeFeu.addEventListener('click', () => playerOne.innerHTML = '<img class="pokemon"src="assets/img/Héricendre.png" alt="">')
 
 const starterFeu = document.querySelectorAll(".starterFeu");
 for (let i = 0; i < starterFeu.length; i++) {
@@ -34,7 +34,7 @@ for (let i = 0; i < starterFeu.length; i++) {
 
 // Choix starter plante
 let pokePlante = document.querySelector('#poke2');
-pokePlante.addEventListener('click', () => playerOne.innerHTML = '<img class="img-fluid pokemon" src="assets/img/Germignon.png" alt="">')
+pokePlante.addEventListener('click', () => playerOne.innerHTML = '<img class="pokemon" src="assets/img/Germignon.png" alt="">')
 
 const starterPlante = document.querySelectorAll(".starterPlante");
 for (let i = 0; i < starterPlante.length; i++) {
@@ -48,7 +48,7 @@ for (let i = 0; i < starterPlante.length; i++) {
 
 // Choix starter eau
 let pokeEau = document.querySelector('#poke3');
-pokeEau.addEventListener('click', () => playerOne.innerHTML = '<img class="img-fluid pokemon" src="assets/img/Kaiminus.png" alt="" >')
+pokeEau.addEventListener('click', () => playerOne.innerHTML = '<img class="pokemon" src="assets/img/Kaiminus.png" alt="" >')
 
 const starterEau = document.querySelectorAll(".starterEau");
 for (let i = 0; i < starterEau.length; i++) {
@@ -73,19 +73,19 @@ function getComputerChoice() {
   computerSelection = gameOptions[randomIndex].type;
 
   if (computerSelection == gameOptions[0].type) {
-    computerPokemon.innerHTML = '<img class="img-fluid pkm" src="assets/img/salamèche.png" alt="">'
+    computerPokemon.innerHTML = '<img class="pkm" src="assets/img/salamèche.png" alt="">'
     computerChoice.innerHTML = '<img src="assets/img/fire.png" alt="">'
-    VSpkm.innerHTML = '<img src="https://www.pokepedia.fr/images/9/96/Miniature_004_DEPS.png" class="img-fluid fighter" id="EaseIn" alt="...">'
+    VSpkm.innerHTML = '<img src="assets/img/sala.png" class="img-fluid fighter" id="EaseIn" alt="...">'
 
   } else if (computerSelection == gameOptions[1].type) {
-    computerPokemon.innerHTML = '<img class="img-fluid pkm" src="assets/img/bulbizarre.png" alt="">'
+    computerPokemon.innerHTML = '<img class="pkm" src="assets/img/bulbizarre.png" alt="">'
     computerChoice.innerHTML = '<img src="assets/img/plant.png" alt="">'
-    VSpkm.innerHTML = '<img src="https://www.pokepedia.fr/images/3/33/Miniature_001_DEPS.png" class="img-fluid fighter" id="EaseIn" alt="...">'
+    VSpkm.innerHTML = '<img src="assets/img/bulbi.png" class="img-fluid fighter" id="EaseIn" alt="...">'
 
   } else {
-    computerPokemon.innerHTML = '<img class="img-fluid pkm" src="assets/img/Carapuce.png" alt="">'
+    computerPokemon.innerHTML = '<img class="pkm" src="assets/img/Carapuce.png" alt="">'
     computerChoice.innerHTML = '<img src="assets/img/water.png" alt="">'
-    VSpkm.innerHTML = '<img src="https://www.pokepedia.fr/images/a/ab/Miniature_007_DEPS.png" class="img-fluid fighter" id="EaseIn" alt="...">'
+    VSpkm.innerHTML = '<img src="assets/img/cara.png" class="img-fluid fighter" id="EaseIn" alt="...">'
 
   }
 }
@@ -118,6 +118,15 @@ var victorySound = new Audio(
 var mehSound = new Audio(
   "assets/music/meh.mp3"
 );
+var winSound = new Audio(
+  "assets/music/win.mp3"
+);
+var restartSound = new Audio(
+  "assets/music/restart.mp3"
+);
+var looseSound = new Audio(
+  "assets/music/loose.mp3"
+)
 
 // let's battle
 for (let i = 0; i < gameButtons.length; i++) {
@@ -128,36 +137,37 @@ for (let i = 0; i < gameButtons.length; i++) {
     getComputerChoice();
 
     if (playerSelection.type === computerSelection) {
-      message.innerHTML = '<p class="bg-light h3 rounded">It is not very effective !</p>'
+      message.innerHTML = '<p class="bg-light h3 rounded">The move had no effect</p>'
       mehSound.play();
       highlight(computerScoreEl);
       highlight(userScoreEl);
     } else if (playerSelection.losesTo === computerSelection) {
-      message.innerHTML = '<p class="bg-light h3 rounded text-danger">Your pokemon is in a bad position !</p>'
+      message.innerHTML = '<p class="bg-light h3 rounded text-danger">Your pokemon is damaged by the attack !</p>'
       defeatSound.play();
       highlight(computerScoreEl);
       computerScore += 1;
       computerScoreEl.innerText = computerScore;
     } else {
-      message.innerHTML = '<p class="bg-light h3 text-success rounded">It is super effective !</p>'
+      message.innerHTML = '<p class="bg-light h3 text-success rounded">It`s super effective !</p>'
       victorySound.play();
       highlight(userScoreEl);
       userScore += 1;
       userScoreEl.innerText = userScore;
     }
 
+    let footer = document.querySelector('footer'); 
     let battle = document.querySelector('#battle');
     if ((userScoreEl.innerText) == 3) {
-      console.log("woop woop")
-      battle.innerHTML = '<div class="text-center"><img src="assets/img/winner.webp" alt="" class="img-fluid winwin"></div>'
+      winSound.play();
+      battle.innerHTML = '<div class="text-center message"><p class="h1 text-success bg-light rounded mt-2 ">You defeated player Bot!</p><img src="assets/img/winner.webp" alt="" class="img-fluid winwin"><div class="text-center"><img type="button" src="assets/img/restart.png" class="img-fluid restart bg-light rounded-circle" onClick="window.location.reload();"/></div></div>'
     } else if ((computerScoreEl.innerText) == 3) {
-      console.log("winwin")
-      battle.innerHTML = '<div class="text-center"><p class="h1 text-white bg-dark">Your Pokemon has fainted !</p></div>'
-
+      looseSound.play();
+      battle.innerHTML = '<div class="text-center message"><p class="h1 text-white bg-dark rounded mt-2 ">You were overwhelmed by your defeat!</p><img src="assets/img/ko.png" alt="" class="img-fluid winwin"><div class="text-center"><img type="button" src="assets/img/restart.png" class="img-fluid restart bg-light rounded-circle" onClick="window.location.reload();"/></div></div>'
     }
   })
 
 }
+
 
 
 
@@ -168,5 +178,4 @@ for (let i = 0; i < gameButtons.length; i++) {
 // myModal.addEventListener('shown.bs.modal', () => {
 //   myInput.focus()
 // })
-
 

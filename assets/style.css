@@ -4,12 +4,14 @@ body {
 
     background-image: url(img/icons8-pokéball-100.png);
     background-attachment: fixed;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .container {
     margin: 0;
+    margin-top: 2rem;
     padding: 0;
+   
 }
 
 nav {
@@ -44,6 +46,7 @@ nav {
 
 .fighter {
     animation: bounce2 0.2s ease infinite alternate;
+    margin-top: 3rem;
 
 }
 
@@ -57,10 +60,6 @@ nav {
     }
 }
 
-/* .Pokeball:hover {
-    transform: translateY(-10px);
-} */
-
 .PokeballActive:hover {
     transform: translateY(-10px);
 }
@@ -72,62 +71,95 @@ nav {
 }
 
 @keyframes shake {
-    0% {transform: translate(0, 0) rotate(0);}
-    20% {transform: translate(-5px, 0) rotate(-10deg);}
-    30% {transform: translate(5px, 0) rotate(10deg);}
-    50% {transform: translate(-5px, 0) rotate(-10deg);}
-    60% {transform: translate(5px, 0) rotate(10deg);}
-    100% {transform: translate(0, 0) rotate(0);}
+    0% {
+        transform: translate(0, 0) rotate(0);
+    }
+
+    20% {
+        transform: translate(-5px, 0) rotate(-10deg);
+    }
+
+    30% {
+        transform: translate(5px, 0) rotate(10deg);
+    }
+
+    50% {
+        transform: translate(-5px, 0) rotate(-10deg);
+    }
+
+    60% {
+        transform: translate(5px, 0) rotate(10deg);
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(0);
+    }
 }
 
 .pokemon {
     width: 220px;
     filter: drop-shadow(1px 10px 5px black);
-    animation: bounce 0.8s ease infinite alternate, fadeIn 1s, zoom-in-zoom-out 0.5s ;
+    animation: bounce 0.8s ease infinite alternate, fadeIn 1s, zoom-in-zoom-out 0.5s;
 }
 
 
 @keyframes zoom-in-zoom-out {
-    0% { transform: scale(0.5, 0.5);}
-    50% { transform: scale(0.5, 0.5);}
-    100% { transform: scale(1, 1);}
-  }
+    0% {
+        transform: scale(0.5, 0.5);
+    }
+
+    50% {
+        transform: scale(0.5, 0.5);
+    }
+
+    100% {
+        transform: scale(1, 1);
+    }
+}
 
 @keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-  }
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
 
 @keyframes bounce {
-    from {transform: translateY(0);}
-    to {transform: translateY(-10px);}
-    
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-10px);
+    }
+
 }
 
 .winwin {
-    animation: zoom 1s ease;
+    /* animation: zoom 0.8s ease; */
+    width: 300px;
 }
 
-@keyframes zoom {
+/* @keyframes zoom {
     0% { transform: scale(1, 1);}
-    100% { transform: scale(2.5, 2.5);}
-  }
+    100% { transform: scale(1.5, 1.5);}
+  } */
 
 .pkm {
     filter: drop-shadow(1px 10px 5px black);
     animation: bounce 0.90s ease infinite alternate, fadeIn 1s, zoom-in-zoom-out 0.5s;
 }
 
-/* .rival {
-    padding-top: 7rem;
-} */
-
-.restart:hover {
-    transform: scale(1.1);
-    transition: 1s;
+.restart {
+    animation: bounce 0.3s ease infinite alternate;
+    margin-bottom: 1rem;
 }
 
 .message p {
+
     animation-duration: 2s;
     animation-name: slidein;
 
@@ -136,10 +168,51 @@ nav {
 @keyframes slidein {
     from {
         margin-left: 100%;
-        width: 300%;
+        width: 100%;
     }
+
     to {
         margin-left: 0%;
         width: 100%;
     }
 }
+
+.logo {
+    height: 70px;
+}
+
+.versus {
+    height: 60px;
+}
+
+@media only screen and (max-width: 600px) {
+    .fighter {
+        width: 100px;
+    } 
+    .player1 {
+        height: 150px;
+    }
+    .battleArea {
+        height: 410px;
+    }
+    .versus {
+        display:none
+    }
+    .pokemon {
+        width:140px;
+    }
+    .pkm {
+        width:130px;
+    }
+    .winwin {
+        width: 250px;
+    }
+    .container {
+        margin: 0;
+        padding: 0;
+       
+    }
+}
+
+
+
