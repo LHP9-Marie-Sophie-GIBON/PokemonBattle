@@ -186,6 +186,7 @@ nav {
 }
 
 @media only screen and (max-width: 600px) {
+    
     .fighter {
         width: 100px;
     } 
