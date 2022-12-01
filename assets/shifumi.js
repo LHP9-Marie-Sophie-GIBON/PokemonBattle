@@ -137,18 +137,18 @@ for (let i = 0; i < gameButtons.length; i++) {
     getComputerChoice();
 
     if (playerSelection.type === computerSelection) {
-      message.innerHTML = '<p class="bg-light h3 rounded">The move had no effect</p>'
+      message.innerHTML = '<p class="bg-light h5 rounded">The move had no effect</p>'
       mehSound.play();
       highlight(computerScoreEl);
       highlight(userScoreEl);
     } else if (playerSelection.losesTo === computerSelection) {
-      message.innerHTML = '<p class="bg-light h3 rounded text-danger">Your pokemon is damaged by the attack !</p>'
+      message.innerHTML = '<p class="bg-light h5 rounded text-danger">Your pokemon is damaged by the attack !</p>'
       defeatSound.play();
       highlight(computerScoreEl);
       computerScore += 1;
       computerScoreEl.innerText = computerScore;
     } else {
-      message.innerHTML = '<p class="bg-light h3 text-success rounded">It`s super effective !</p>'
+      message.innerHTML = '<p class="bg-light h5 text-success rounded">It`s super effective !</p>'
       victorySound.play();
       highlight(userScoreEl);
       userScore += 1;
@@ -159,10 +159,10 @@ for (let i = 0; i < gameButtons.length; i++) {
     let battle = document.querySelector('#battle');
     if ((userScoreEl.innerText) == 3) {
       winSound.play();
-      battle.innerHTML = '<div class="text-center message"><p class="h1 text-success bg-light rounded mt-2 ">You defeated player Bot!</p><img src="assets/img/winner.webp" alt="" class="img-fluid winwin"><div class="text-center"><img type="button" src="assets/img/restart.png" class="img-fluid restart bg-light rounded-circle" onClick="window.location.reload();"/></div></div>'
+      battle.innerHTML = '<div class="text-center message"><p class="h4 text-success bg-light rounded mt-2 ">You defeated trainer Bot!</p><img src="assets/img/winner.webp" alt="" class="img-fluid winwin"><div class="text-center"><img type="button" src="assets/img/restart.png" class="img-fluid restart bg-light rounded-circle" onClick="window.location.reload();"/></div></div>'
     } else if ((computerScoreEl.innerText) == 3) {
       looseSound.play();
-      battle.innerHTML = '<div class="text-center message"><p class="h1 text-white bg-dark rounded mt-2 ">You were overwhelmed by your defeat!</p><img src="assets/img/ko.png" alt="" class="img-fluid winwin"><div class="text-center"><img type="button" src="assets/img/restart.png" class="img-fluid restart bg-light rounded-circle" onClick="window.location.reload();"/></div></div>'
+      battle.innerHTML = '<div class="text-center message"><p class="h4 rounded bg-light mt-2 ">You were overwhelmed by your defeat!</p><img src="assets/img/ko.png" alt="" class="img-fluid winwin"><div class="text-center"><img type="button" src="assets/img/restart.png" class="img-fluid restart bg-light rounded-circle" onClick="window.location.reload();"/></div></div>'
     }
   })
 
