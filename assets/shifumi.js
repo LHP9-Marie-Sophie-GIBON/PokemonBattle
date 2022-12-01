@@ -159,7 +159,7 @@ for (let i = 0; i < gameButtons.length; i++) {
     let battle = document.querySelector('#battle');
     if ((userScoreEl.innerText) == 3) {
       winSound.play();
-      battle.innerHTML = '<div class="text-center message"><p class="h4 text-success bg-light rounded mt-2 ">You defeated trainer Bot!</p><img src="assets/img/winner.webp" alt="" class="img-fluid winwin"><div class="text-center"><img type="button" src="assets/img/restart.png" class="img-fluid restart bg-light rounded-circle" onClick="window.location.reload();"/></div></div>'
+      battle.innerHTML = '<div class="text-center message"><p class="h4 text-success bg-light rounded mt-2 ">You defeated trainer Blue!</p><img src="assets/img/winner.webp" alt="" class="img-fluid winwin"><div class="text-center"><img type="button" src="assets/img/restart.png" class="img-fluid restart bg-light rounded-circle" onClick="window.location.reload();"/></div></div>'
     } else if ((computerScoreEl.innerText) == 3) {
       looseSound.play();
       battle.innerHTML = '<div class="text-center message"><p class="h4 rounded bg-light mt-2 ">You were overwhelmed by your defeat!</p><img src="assets/img/ko.png" alt="" class="img-fluid winwin"><div class="text-center"><img type="button" src="assets/img/restart.png" class="img-fluid restart bg-light rounded-circle" onClick="window.location.reload();"/></div></div>'
