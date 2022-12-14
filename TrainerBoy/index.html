@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon Battle</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <link rel="icon" href="assets/img/Poké_Ball_icon.svg.png" />
+
+</head>
+
+<body>
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg justify-content-between ps-3 ">
+            <a class="navbar-brand"><img src="assets/img/Battle_Frontier_logo2.webp" alt="logo" class=" logo"></a>
+            <form class="navbar">
+                <!-- Button trigger modal -->
+                <button type="button" class="btn d-lg-block d-none" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    <img src="https://img.icons8.com/ios-filled/35/null/about.png" />
+                </button>
+
+                <!-- Score -->
+                <li class="nav-item btn ">
+                    <div>
+                        <img src="https://archives.bulbagarden.net/media/upload/f/f1/EthanHGSSwalkdown.png" alt="" class="img-fluid"><span id="userScore"
+                            class="h3 text-danger">0</span>
+                    </div>
+                </li>
+                <li class="nav-item btn ">
+                    <div><img src="assets/img/Blue2.webp" alt="" class="img-fluid"> <span id="computerScore"
+                            class="h3 text-primary">0</span>
+                    </div>
+                </li>
+            </form>
+        </nav>
+    </header>
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog  modal-dialog-centered">
+        <div class="modal-content ">
+            <div class="modal-header border-light">
+                <h1 class="modal-title fs-5 " id="staticBackdropLabel"><img
+                        src="https://img.icons8.com/color/30/null/pikachu-pokemon.png" />How to play<img
+                        src="https://img.icons8.com/color/30/null/pikachu-pokemon.png" />
+                </h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p class="h6"><img
+                        src="https://img.icons8.com/fluency-systems-filled/30/null/pokeball.png" />Choose
+                    your pokemon :</p>
+                <p> Click on one of the pokeball : <img src="assets/img/Pokeballmin.png" alt=""> <img src="assets/img/PokeballGreenmin.png" alt=""> <img src="assets/img/PokeballBluemin.png" alt="">(each color represent a type : green for plant, red for fire and blue for water)</p>
+                <p> Or use the arrows to slide from left to right</p>
+                <p class="h6"><img
+                        src="https://img.icons8.com/fluency-systems-filled/30/null/pokeball.png"
+                        alt="">Fight with him : </p>
+                <p> Click on the bouncing pokemon in order to fight with him. The computer will choose
+                    automatically an opponent.</p>
+                <p>In order to win, you'll need a stronger type than your opponent : </p>
+                <p class="text-center"><img src="assets/img/type.jpg" alt=""></p>
+                <p class="h6"><img
+                        src="https://img.icons8.com/fluency-systems-filled/30/null/pokeball.png"
+                        alt="">Win the battle : </p>
+                <p>You can check your score next to this icon <img src="assets/img/Red29Sprite.webp" alt="">, you'll win the battle after 3 victories
+                    <p class="h6"><img
+                        src="https://img.icons8.com/fluency-systems-filled/30/null/pokeball.png"
+                        alt="">Reset the game : </p>
+                    <p>Click on this icon : <img src="assets/img/restartMIN.png" alt=""></p>
+                   
+                <p class="h6">Let the best trainer win !</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Let's Battle
+                    !</button>
+            </div>
+        </div>
+    </div>
+    </div>
+
+ <!-- Modal popup -->
+ <div id="simpleModal" class="modal modal-lg" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content modalContentPopup">
+            <div class="modal-body">
+                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner popup">
+                        <div class="carousel-item active">
+                            <div class="text-center">
+                                <div class="fs-4 fw-bold" id="staticBackdropLabel"><img
+                                        src="https://img.icons8.com/color/30/null/pikachu-pokemon.png" />How to play<img
+                                        src="https://img.icons8.com/color/30/null/pikachu-pokemon.png" />
+                                </div>
+                            </div>
+                            <p class="h6"><img
+                                    src="https://img.icons8.com/fluency-systems-filled/30/null/pokeball.png" />Choose
+                                your pokemon :</p>
+                            <p> Click on one of the pokeball : </p>
+                            <div><img src="assets/img/Pokeballmin.png" alt=""> : contain the <span class="text-danger fw-bold">fire</span>  type</div>
+                            <div><img src="assets/img/PokeballGreenmin.png" alt=""> : contain the <span class="text-success fw-bold">grass</span>  type</div>
+                            <div><img src="assets/img/PokeballBluemin.png" alt=""> : contain the <span class="text-info fw-bold">water</span>  type</div>
+                            <p class="mt-2"> Or use the arrows to slide from left to right</p>
+                            <div class="text-center mt-5"><img src="assets/img/heri.png" alt=""><img
+                                    src="assets/img/germi.png" alt=""><img src="assets/img/kaim.png" alt=""></div>
+                        </div>
+                        <div class="carousel-item ">
+                            <div class="text-center">
+                                <div class="fs-4 fw-bold" id="staticBackdropLabel"><img
+                                    src="https://img.icons8.com/color/30/null/pikachu-pokemon.png" />How to play<img
+                                    src="https://img.icons8.com/color/30/null/pikachu-pokemon.png" />
+                            </div>
+                            </div>
+                            <p class="h6"><img src="https://img.icons8.com/fluency-systems-filled/30/null/pokeball.png"
+                                    alt="">Fight with him : </p>
+                            <p> Click on the bouncing pokemon in order to fight with him. The computer will choose
+                                automatically an opponent.</p>
+                            <p>In order to win, you'll need a stronger type than your opponent : </p>
+                            <p class="text-center mt-5"><img src="assets/img/type.jpg" alt=""></p>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="text-center">
+                                <div class="fs-4 fw-bold" id="staticBackdropLabel"><img
+                                    src="https://img.icons8.com/color/30/null/pikachu-pokemon.png" />How to play<img
+                                    src="https://img.icons8.com/color/30/null/pikachu-pokemon.png" />
+                            </div>
+                            </div>
+                            <p class="h6"><img src="https://img.icons8.com/fluency-systems-filled/30/null/pokeball.png"
+                                    alt="">Win the battle : </p>
+                            <p>You can check your score next to this icon <img src="assets/img/Red29Sprite.webp"
+                                    alt="">, you'll
+                                win the battle after 3 victories
+                            <p class="h6"><img src="https://img.icons8.com/fluency-systems-filled/30/null/pokeball.png"
+                                    alt="">Reset the game : </p>
+                            <p>Click on this icon : <img src="assets/img/restartMIN.png" alt=""></p>
+
+                            <div class="h6 mt-5 fw-bold text-center">Let the best trainer win !</div>
+                            <div class="text-center mt-3"><img src="assets/img/sala.png" alt=""><img src="assets/img/bulbi.png" alt=""><img src="assets/img/cara.png" alt=""></div>
+                        </div>
+
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"><img src="https://img.icons8.com/material-rounded/24/null/chevron-left.png"/></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"><img src="https://img.icons8.com/material-rounded/24/null/chevron-right.png"/></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                    
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn" data-bs-dismiss="modal"><img class="letsgo" src="https://img.icons8.com/ios-filled/50/339AF0/battle-pokemon.png"/></button>
+              </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Main -->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-2 rounded m-1 team1 text-center player1">
+                <div class="d-lg-block d-none">
+                    <img src="assets/img/red.jpg" alt=""
+                        class="rounded-circle border border-dark border-4 mt-2 player">
+                    <div class="h5 d-lg-block d-none">Trainer Red</div>
+                </div>
+
+                <div class="row text-center">
+                    <div id="carousel" class="carousel slide">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img id="poke1" type="button"
+                                    src="assets/img/heri.png"
+                                    class="fighter img-fluid starterFeu" alt="..." data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="Choose me!">
+                            </div>
+                            <div class="carousel-item">
+                                <img id="poke2" type="button"
+                                    src="assets/img/germi.png"
+                                    class="fighter img-fluid starterPlante" alt="..." data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="Choose me!">
+                            </div>
+                            <div class="carousel-item">
+                                <img id="poke3" type="button"
+                                    src="assets/img/kaim.png"
+                                    class="fighter img-fluid starterEau" alt="..." data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="Choose me!">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carousel"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carousel"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="row mt-5 text-center mb-4 ">
+                    <div class="col d-lg-block d-none">
+                        <img type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active PokeballActive "
+                            aria-label="Slide 1" src="assets/img/Pokeball.png" alt="" data-bs-toggle="tooltip" data-bs-placement="top"
+                            data-bs-custom-class="custom-tooltip" data-bs-title="Cyndaquil (fire)">
+                    </div>
+                    <div class="col d-lg-block d-none">
+                        <img type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2"
+                            class="PokeballActive" src="assets/img/PokeballGreen.png" alt="" data-bs-toggle="tooltip" data-bs-placement="top"
+                            data-bs-custom-class="custom-tooltip" data-bs-title="Chikorita (plant)">
+                              
+                    </div>
+                    <div class="col d-lg-block d-none">
+                        <img type="button" data-bs-target="#carousel" data-bs-slide-to="2" aria-label="Slide 3"
+                            class="PokeballActive" src="assets/img/PokeballBlue.png" alt="" data-bs-toggle="tooltip" data-bs-placement="top"
+                            data-bs-custom-class="custom-tooltip" data-bs-title="Totodile (water)">
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col border rounded m-1 battleArea" id="battle">
+                <div class="row text-center">
+                    <div class="col message mt-3">
+                        <div class="">
+                            <img src="https://img.icons8.com/ios-filled/100/null/battle-pokemon.png" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-2 text-center">
+                    <div class="h2 text-white"><span class="youChose"></span> <img
+                            src="https://img.icons8.com/sf-black-filled/64/null/pokeball.png" /> <span
+                            class="computerChose"></span></div>
+                </div>
+                <div class="row text-center pb-5 battle" >
+                    <div class="col" id="playerOne"></div>
+                    <div class="col"><img src="assets/img/vs.png" alt="" class="versus"></div>
+                    <div class="col" id="computerPokemon"></div>
+                </div>
+
+
+            </div>
+
+            <div class="col-sm-2 rounded m-1  text-center team2 d-lg-block d-none">
+                <img src="assets/img/blue.jpg" alt="" class="rounded-circle border border-dark border-4 mt-2 player">
+                <div class="h5 d-lg-block d-none">Trainer Blue</div>
+                <div class="row text-center d-lg-block d-none">
+                    <div id="carousel2" class="carousel slide" >
+                        <div class="carousel-inner">
+                            <div class="carousel-item active" id="VSpkm">
+                                <img src="assets/img/heri.png" alt="" class="img-fluid fighter" style="opacity: 0;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-5 text-center Pokeball">
+                    <div class="col">
+                        <img class="active" src="assets/img/Pokeball.png" alt="">
+                    </div>
+                    <div class="col">
+                        <img src="assets/img/PokeballGreen.png" alt="">
+                    </div>
+                    <div class="col">
+                        <img src="assets/img/PokeballBlue.png" alt="">
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+    </footer>
+
+    
+    <script src="assets/shifumi.js"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+    <script>
+        // tooltip
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+</body>
+</html>
