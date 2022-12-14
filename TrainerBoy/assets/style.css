@@ -191,15 +191,31 @@ nav {
 }
 
 @media only screen and (max-width: 600px) {
-    
+   .container {
+    margin: 0;
+   }
     .fighter {
         width: 100px;
     } 
     .player1 {
-        height: 150px;
+        height: 210px;
     }
+
+    .player1 .carousel-item {
+        height: 145px;
+    }
+
+    .player1 .choixpoke {
+        margin: 1px !important;
+    }
+    
+    .battle {
+        padding-top: 1rem;
+    }
+
     .battleArea {
-        height: 410px;
+        height: 340px;
+        order: 1;
     }
     .versus {
         display:none
@@ -213,22 +229,61 @@ nav {
     .winwin {
         width: 250px;
     }
-    .container {
-        margin: 0;
-        padding: 0;
-       
+
+    .message {
+        height: 50px;
+    }
+
+    .letsbattle {
+        width: 80px;
+    }
+
+    .mediaSM {
+        width: 60px;
+    }
+
+    .mediaSM1 {
+        width: 100px;
+    }
+
+    .trainerBlue {
+        width: 250px;
+    }
+
+    .carousel-item {
+        padding-left: 0;
+    }
+
+    .popup {
+   
+        height: 350px !important;
+    }
+
+    .newchallenger {
+        padding-top: 3.3rem !important;
     }
 }
 
 .popup {
-    padding-top: 1rem;
-    padding-left: 4rem;
-    padding-right: 4rem;
-    height: 400px;
+    height: 380px;
 }
 
 
 .letsgo {
     animation: bounce2 0.2s ease infinite alternate;
+}
+
+
+.modalBodyPopup {
+    background-image: url(img/battle.jpg);
+}
+
+.popup .carousel-item {
+    padding-left: 1rem;
+    height: 350px;
+}
+
+.rules  {
+    background-color: rgba(255, 255, 255, 0.812);
 }
 
